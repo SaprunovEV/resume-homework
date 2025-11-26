@@ -20,7 +20,16 @@ import ResumeText from "@/components/parts/ResumeText.vue";
 
 
 export default {
-  props: ["blocks"],
+  props: {
+    blocks: {
+      type: Array,
+      required: true,
+      validator: (value) => {
+        return value.length;
+      }
+    },
+
+  },
   components: {
     ResumeTitle, ResumeAvatar, ResumeSubtitle, ResumeText
   }
